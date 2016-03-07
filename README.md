@@ -14,6 +14,15 @@
 $ docker run --rm -v /path/to/python/code:/code eeacms/flake8
 ```
 
+## Advanced usage
+
+Exclude files or directories:
+
+```console
+$ docker run --rm -v /path/to/python/code:/code \ 
+         eeacms/flake8 --exclude=skins /code
+```
+
 See flake8 `--help` for more options:
 
 ```console
