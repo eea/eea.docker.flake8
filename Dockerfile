@@ -7,5 +7,7 @@ RUN apk add --no-cache --virtual .run-deps git \
 && pip install flake8==$FLAKE8_VERSION \
 && mkdir -p /code
 
+COPY docker-entrypoint.sh /docker-entrypoint.sh
+
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["flake8"]
