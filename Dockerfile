@@ -8,6 +8,7 @@ RUN apk add --no-cache --virtual .run-deps git \
 && mkdir -p /code
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
+RUN chmod 777 /docker-entrypoint.sh
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["flake8"]
