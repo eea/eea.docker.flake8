@@ -2,6 +2,7 @@
 set -e
 
 CMD="$1"
+IGNORE_EXTEND="$2"
 
 if [[ ${CMD:0:4} = "http" ]]; then
   GIT_SRC=$1
@@ -31,7 +32,7 @@ if [ ! -z "$GIT_SRC" ]; then
 fi
 
 if [ "$CMD" = "flake8" ]; then
-  find -L /code $CUSTOM_FIND -name [eE]xtensions -prune -o -name skins -prune -o -name "*.py" -print | xargs -r flake8 $2
+  find -L /code $CUSTOM_FIND -name [eE]xtensions -prune -o -name skins -prune -o -name "*.py" -print | xargs -r flake8 $IGNORE_EXTEND
 else
   exec "$@"
 fi
