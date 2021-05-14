@@ -31,7 +31,7 @@ if [ ! -z "$GIT_SRC" ]; then
 fi
 
 if [ "$CMD" = "flake8" ]; then
-  find -L /code $CUSTOM_FIND -name [eE]xtensions -prune -o -name skins -prune -o -name "*.py" -print | xargs -r flake8
+  find -L /code $CUSTOM_FIND -name [eE]xtensions -prune -o -name skins -prune -o -name "*.py" -print | xargs -r flake8 $2
 else
   exec "$@"
 fi
